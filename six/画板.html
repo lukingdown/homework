@@ -24,9 +24,7 @@
 			<option value="6">6</option>
 		</select>
 		<input type="color" name="color" class="color"/>
-		<input type="color" name="color" class="color"/>
-		<input type="color" name="color" class="color"/>
-		<input type="color" name="color" class="color"/>
+		
 		
 		<script type="text/javascript">
 			// 画布
@@ -58,8 +56,10 @@
 		    	
 		    }
 			
-			var linewidth = document.getElementsByClassName("linewidth.option");
-			
+			var context.linewidth = document.getElementsByClassName("linewidth");
+			linewidth.onmousedown = function(){
+				context.lineWidth = "linewidth.option.value"
+			}
 		
 			
 			var strokeStyle = document.getElementsByClassName("color");
