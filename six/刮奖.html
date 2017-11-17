@@ -40,22 +40,22 @@
 			
 			var gua = document.getElementsByClassName("gua")[0];
 			var clear = false;
-			
 			gua.onmousedown = function(e){
-				flag = true;
+				clear = true;
 			}
 			gua.onmouseup = function(e){
-				flag = false;
+				clear = false;
 			}
 			gua.onmousemove = function(e){
+				
 				if(clear){
 					var x = e.pageX - this.offsetLeft;
-					var y = e.pageY - this.offsettop;
-					context.clearRect(x-2,y-2,5,5)
+					var y = e.pageY - this.offsetTop;
+					context.clearRect(x-2,y-2,10,10)
 				}
 				
-				
 			}
+			
 			
 		</script>
 	</body>
