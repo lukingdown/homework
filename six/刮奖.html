@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 200px;
+				height: 40px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 999;
+			}
+			.gua{
+				width: 200px;
+				height: 40px;
+				border: solid 1px red ;
+				line-height: 40px;
+				text-align: center;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="gua">
+			<canvas id="canvas" width="200" height="40"></canvas>
+			<span>谢谢惠顾</span>
+		</div>
+		
+		<script type="text/javascript">
+			// 画布
+			var canvas = document.getElementById("canvas");
+		
+			// 画笔				
+			var context = canvas.getContext("2d");
+			context.fillStyle = "gainsboro";
+			context.fillRect(0,0,200,40);
+			
+			var gua = document.getElementsByClassName("gua")[0];
+			var clear = false;
+			
+			gua.onmousedown = function(e){
+				flag = true;
+			}
+			gua.onmouseup = function(e){
+				flag = false;
+			}
+			gua.onmousemove = function(e){
+				if(clear){
+					var x = e.pageX - this.offsetLeft;
+					var y = e.pageY - this.offsettop;
+					context.clearRect(x-2,y-2,5,5)
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+</html>
