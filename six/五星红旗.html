@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+				margin: 50px auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			// 画布
+			var canvas = document.getElementById("canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+			// 画笔				
+			var context = canvas.getContext("2d");
+			context.beginPath();
+			context.fillStyle ="#FF0000";
+			context.fillRect(0,0,800,520);
+			context.closePath();
+			context.beginPath();
+			context.setTransform(1,0,0,1,0,0);
+			    context.translate(150,150);
+			star(50,100)
+			function star(r,R){
+				
+				
+				
+				context.beginPath();
+				for(var i = 0;i<5;i++){
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.lineWidth = 5;
+				context.strokeStyle ="red";
+				context.stroke();
+				context.fillStyle = "yellow";
+				context.fill();
+				
+				
+			}
+			context.beginPath();
+			context.setTransform(1,0,0,1,0,0);
+			    context.translate(270,270);
+			star(20,40)
+			function star(r,R){
+				
+				
+				
+				context.beginPath();
+				context.setTransform(1,0,0,1,0,0);
+			    context.translate(150,100);
+				for(var i = 0;i<5;i++){
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.lineWidth = 5;
+				context.strokeStyle ="red";
+				context.stroke();
+				context.fillStyle = "yellow";
+				context.fill();
+				
+				
+			}
+			
+			context.beginPath();
+			context.setTransform(1,0,0,1,0,0);
+			context.translate(320,180);
+			star(20,40)
+			function star(r,R){
+				
+				
+				
+				context.beginPath();
+				for(var i = 0;i<5;i++){
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.lineWidth = 5;
+				context.strokeStyle ="red";
+				context.stroke();
+				context.fillStyle = "yellow";
+				context.fill();
+				
+				
+			}
+			context.beginPath();
+			context.setTransform(1,0,0,1,0,0);
+			context.translate(310,80);
+			star(20,40)
+			function star(r,R){
+				
+				
+				
+				context.beginPath();
+				for(var i = 0;i<5;i++){
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.lineWidth = 5;
+				context.strokeStyle ="red";
+				context.stroke();
+				context.fillStyle = "yellow";
+				context.fill();
+				
+				
+			}
+			context.beginPath();
+			context.setTransform(1,0,0,1,0,0);
+			context.translate(190,330);
+			star(20,40)
+			function star(r,R){
+				
+				
+				
+				context.beginPath();
+				for(var i = 0;i<5;i++){
+					context.lineTo(Math.cos(Math.PI/180*(18+72*i))*R,Math.sin(Math.PI/180*(18+72*i))*R*-1);
+					context.lineTo(Math.cos(Math.PI/180*(54+72*i))*r,Math.sin(Math.PI/180*(54+72*i))*r*-1);
+				}
+				context.closePath();
+				context.lineWidth = 5;
+				context.strokeStyle ="red";
+				context.stroke();
+				context.fillStyle = "yellow";
+				context.fill();
+				
+				
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>
