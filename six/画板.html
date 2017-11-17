@@ -15,7 +15,7 @@
 	</head>
 	<body>
 		<canvas id="canvas" width="800" height="800"></canvas>
-		<select class="linewidth">
+		<select id="width">
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -23,7 +23,8 @@
 			<option value="5">5</option>
 			<option value="6">6</option>
 		</select>
-		<input type="color" name="color" class="color"/>
+		<input id="color" type="color" name="color" class="color"/>
+		<input type="checkbox" value=""  id="eraser"/>橡皮擦
 		
 		
 		<script type="text/javascript">
@@ -56,18 +57,21 @@
 		    	
 		    }
 			
-			var context.linewidth = document.getElementsByClassName("linewidth");
-			linewidth.onmousedown = function(){
-				context.lineWidth = "linewidth.option.value"
+			document.getElementById("width").onchange = function(){
+				context.lineWidth = this.value*2;
+			}
+			document.getElementById("color").onchange = function(){
+				context.strokeStyle = this.value;
+			}
+			document.getElementById("eraser").onchange = function(e){
+				var x = (e.pageX - this.offsetLeft)*2;
+		    	var y = (e.pageY - this.offsetTop)*2; 
+		    	context.clearRect(x,y);
 			}
 		
+		
 			
-			var strokeStyle = document.getElementsByClassName("color");
-			color.onmousedown = function(e){
-				
-				
-				
-			}
+			
 			
 		</script>
 	</body>
