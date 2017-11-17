@@ -24,7 +24,7 @@
 			<option value="6">6</option>
 		</select>
 		<input id="color" type="color" name="color" class="color"/>
-		<input type="checkbox" value=""  id="eraser"/>橡皮擦
+		<input type="checkbox" value=""  id="clear"/>橡皮擦
 		
 		
 		<script type="text/javascript">
@@ -36,6 +36,7 @@
 			var context = canvas.getContext("2d");
 			
 		    var flag = false;
+		    var clear = false;
 		    
 		    canvas.onmousedown = function(e){
 		    	context.beginPath();
@@ -49,9 +50,15 @@
 			canvas.onmousemove = function(e){
 		    	var x = (e.pageX - this.offsetLeft)*2;
 		    	var y = (e.pageY - this.offsetTop)*2;
+		    	
 		    	if(flag){
-		    		context.lineTo(x,y);
-		    		context.stroke();
+		    		if(!clear){
+		    			context.lineTo(x,y);
+		    		    context.stroke();
+		    		}else{
+		    			context.clearRect(x-5,y-5,10,10)
+		    		}
+		    		
 		    	}
 		    	
 		    	
@@ -63,10 +70,8 @@
 			document.getElementById("color").onchange = function(){
 				context.strokeStyle = this.value;
 			}
-			document.getElementById("eraser").onchange = function(e){
-				var x = (e.pageX - this.offsetLeft)*2;
-		    	var y = (e.pageY - this.offsetTop)*2; 
-		    	context.clearRect(x,y);
+			document.getElementById("clear").onchange = function(e){
+				clear = this.checked;
 			}
 		
 		
