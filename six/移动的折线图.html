@@ -3,7 +3,63 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+				margin: 50px auto;
+				display: block;
+			}
+		</style>
 	</head>
 	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			// 画布
+			var canvas = document.getElementById("canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+			// 画笔				
+			var context = canvas.getContext("2d");
+			context.lineTo(50, 100);
+			context.lineTo(50, 750);
+			context.lineTo(750, 750);
+			context.strokeStyle = "#333";
+			context.lineWidth = 3;
+			context.stroke();
+
+			context.beginPath();
+			context.lineTo(40, 110);
+			context.lineTo(50, 90);
+			context.lineTo(60, 110);
+			context.strokeStyle = "#333";
+			context.lineWidth = 3;
+			context.stroke();
+
+			context.beginPath();
+			context.lineTo(740, 740);
+			context.lineTo(760, 750);
+			context.lineTo(740, 760);
+			context.strokeStyle = "#333";
+			context.lineWidth = 3;
+			context.stroke();
+			
+			setInterval(function() {
+				var d = Math.random()*200;
+			context.clearRect(120,120,800,630);
+				context.beginPath();
+				context.lineTo(120, 480);
+				context.lineTo(220, 350 - d);
+				context.lineTo(320, 450 - d);
+				context.lineTo(420, 350 - d);
+				context.lineTo(520, 650 - d);
+				context.lineTo(620, 400 - d);
+				context.lineTo(720, 450 - d);
+				
+				context.stroke();
+			}, 1500);
+			
+		</script>
 	</body>
 </html>
