@@ -3,7 +3,27 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			#canvas{
+				width: 400px;
+				height: 400px;
+				border: solid 1px red;
+				margin: 50px auto;
+				display: block;
+			}
+		</style>
 	</head>
 	<body>
+		<canvas id="canvas" width="800" height="800"></canvas>
+		<script type="text/javascript">
+			// 画布
+			var canvas = document.getElementById("canvas");
+			canvas.width = 800;
+			canvas.height = 800;
+			// 画笔				
+			var context = canvas.getContext("2d");
+			
+			
+		</script>
 	</body>
 </html>
